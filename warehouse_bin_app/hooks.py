@@ -5,60 +5,42 @@ app_description = "bin location"
 app_email = "pankajal2099@gmail.com"
 app_license = "mit"
 
-# test 
+
 
 fixtures = [
     {
         "dt": "Custom Field",
         "filters": [
-           
             ["module", "=", "warehouse_bin_app"]
         ]
     }
 ]
 
-
-
 doctype_js = {
     "Purchase Receipt": "public/js/purchase_receipt.js",
     "Delivery Note": "public/js/delivery_note.js",
     "Purchase Invoice": "public/js/purchase_invoice.js",
-    "Stock Entry": "public/js/stock_entry.js",
     "Sales Invoice": "public/js/sales_invoice.js",
     "Stock Entry": "public/js/stock_entry.js"
 }
 
 doc_events = {
-
     "Purchase Receipt": {
-        "on_submit": "warehouse_bin_app.stock.update_bin_in_ledger"
+        "on_submit": "warehouse_bin_app.doctype.bin_stock.bin_stock.update_bin_stock"
     },
-
     "Delivery Note": {
-        "on_submit": "warehouse_bin_app.stock.update_bin_in_ledger"
+        "on_submit": "warehouse_bin_app.doctype.bin_stock.bin_stock.update_bin_stock"
     },
-
     "Purchase Invoice": {
-        "on_submit": "warehouse_bin_app.stock.update_bin_in_ledger"
+        "on_submit": "warehouse_bin_app.doctype.bin_stock.bin_stock.update_bin_stock"
     },
     "Sales Invoice": {
-        "on_submit": "warehouse_bin_app.stock.update_bin_in_ledger"
+        "on_submit": "warehouse_bin_app.doctype.bin_stock.bin_stock.update_bin_stock"
     },
     "Stock Entry": {
-        "on_submit": "warehouse_bin_app.stock.update_bin_in_ledger"
+        "on_submit": "warehouse_bin_app.doctype.bin_stock.bin_stock.update_bin_stock"
     }
 }
-
-
-# doc_events = {
-#     "Purchase Receipt": {
-#         "on_submit": "warehouse_bin_app.stock.add_bin_in_ledger"
-#     },
-#       "Delivery Note": {
-#         "on_submit": "warehouse_bin_app.stock.add_bin_in_ledger"
-#     }
-
-# }
 # Apps
 # ------------------
 
